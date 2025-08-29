@@ -1,9 +1,16 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 using std::cout;
 using std::endl;
-
+//задаю enum для типов героев, чтобы игрок мог их выбрать
+enum class CharecterClass {
+    Warrior,
+    Rogue,
+    Barbarian
+};
 //задаю тип урона, т.к. есть монстры не воспринимающие определенный типы урона
 enum class DamageType {
     Slashing, //рубящий
@@ -36,8 +43,8 @@ public:
     strength(str),
     agility(agl),
     endurance(edr),
-    lvl(1)
-    currentWeapon
+    lvl(1),
+    currentWeapon (new weapon(w))
     {}
     void takeDamage(short damage) {
         this->health -= damage;
@@ -48,6 +55,17 @@ public:
 };
 
 int main() {
+    //генератор случайных чисел для статов
+    srand(time(0));
+    //создание случайных статов героя
+    short randomStrenght = 1 + rand() % 3;
+    short randomAgility = 1 + rand() % 3;
+    short randomEndurance = 1 + rand() % 3;
+
+    cout << "Your starting stats: " << endl;
+    cout << "Strenght: " << randomStrenght << endl;
+    cout << "Agility: " << randomAgility << endl;
+    cout << "Endurance: " << randomEndurance << endl;
 
     return 0;
 }
