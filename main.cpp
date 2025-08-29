@@ -25,7 +25,7 @@ struct weapon {
     DamageType type;
 };
 
-class fighter {
+class Fighter {
 public:
     std::string name;
     short health;
@@ -35,8 +35,8 @@ public:
     short endurance;
     short lvl;
     weapon* currentWeapon;
-
-    fighter(const std::string& n, short hp, short maxh, short str, short agl, short edr, weapon w) :
+    //задаем конструктор и инициализируем переменные
+    Fighter(const std::string& n, short hp, short maxh, short str, short agl, short edr, weapon w) :
     name(n),
     health(hp),
     maxHealth(maxh),
@@ -46,11 +46,20 @@ public:
     lvl(1),
     currentWeapon (new weapon(w))
     {}
-    void takeDamage(short damage) {
+    //метод для получения урона, виртуальный, чтобы передать дочерним классам
+    virtual void takeDamage(short damage) {
         this->health -= damage;
     }
+    //метод констатирующий что сердце еще бьется
     bool isALive() const {
         return health > 0;
+    }
+    virtual void attack(Fighter& target) {
+        //вычисления шанса попадания
+        int hitChance = agility + target.agility;
+        if (rand() % hitChance + 1 <= target,agility) {
+
+        }
     }
 };
 
