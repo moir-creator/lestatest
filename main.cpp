@@ -7,8 +7,8 @@ using std::cout;
 using std::endl;
 //задаю enum для типов героев, чтобы игрок мог их выбрать
 enum class CharecterClass {
-    Warrior,
     Rogue,
+    Warrior,
     Barbarian
 };
 //задаю тип урона, т.к. есть монстры не воспринимающие определенный типы урона
@@ -17,6 +17,7 @@ enum class DamageType {
     Bludgeoning, //дробящий
     Piercing //колющий
 };
+
 //создаю для оружия структуру, получающую 1,2,3 из enum
 //не вижу смысла создавать для него целый класс
 struct weapon {
@@ -64,6 +65,26 @@ public:
 };
 
 int main() {
+
+//THE CYCLE OF THE GAME
+    //choose your class:
+    //battle automatic
+    //+1 lvl or game over
+    //      if losed: new game -> chose your class
+    //      if win:
+    //          hp = hpmax
+    //          chose your weapon
+    //          chose your 2nd bonus class
+    //if wins == 3 -> you win the game
+    //
+    //
+
+//mini plan:
+    //create the capabilities method in class fighter
+
+
+
+
     //генератор случайных чисел для статов
     srand(time(0));
     //создание случайных статов героя
