@@ -75,12 +75,51 @@ int main() {
     //          hp = hpmax
     //          chose your weapon
     //          chose your 2nd bonus class
+    //lists of classes:
+    //      weapon
+    //      character
+    //              delete weapon
+    //              is alive
+    //              calculate_damage
+    //              incoming_damage
+    //      player
+    //            update_stats
+    //            level up
+    //            restore_health
+    //            calculate_damage
+    //            attack
+    //            incoming_damage
+    //      monster
+    //          calculate_damage
+    //          incoming_damage
+    //  game
+    //          weapon/damage/type
+    //          monster
+    //  ~game
+    //          weapon
+    //          weapon
+    //
+    //      create_player
+    //      generate_monster
+    //      fight (victory / defeat)
+    //      run: while (true) {
+    //          create_player
+    //          while (wins < 0)
+    //          bool fight 1/0
+    //          if won {
+    //              restore_health
+    //              level_up
+    //              change_weapon
+    //          }
+    //          delete player
+    //      }
     //if wins == 3 -> you win the game
     //
     //
 
 //mini plan:
-    //create the capabilities method in class fighter
+    //create all the methods in intro
+    // 1.
 
 
 
